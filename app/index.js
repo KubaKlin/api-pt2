@@ -22,7 +22,7 @@ Promise.all([
     const fetchedUsers = responseBodies[0];
     const fetchedCompanies = responseBodies[1];
 
-    showUser(accordionWrapper, fetchedCompanies);
+    showUser(accordionWrapper, fetchedCompanies, fetchedUsers);
   })
   .catch(function (error) {
     console.log('Status code', error?.status);

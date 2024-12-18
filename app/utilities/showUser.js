@@ -1,4 +1,6 @@
-export function showUser(accordionWrapper, fetchedCompanies) {
+import { filterCompanyEmployes } from './filterCompanyEmployes';
+
+export function showUser(accordionWrapper, fetchedCompanies, fetchedUsers) {
   fetchedCompanies.forEach(function (company, index) {
     const accordionItem = document.createElement('div');
     accordionItem.classList.add('accordion-item');
@@ -30,5 +32,6 @@ export function showUser(accordionWrapper, fetchedCompanies) {
     accordion.appendChild(accordionBody);
     companyHeader.appendChild(accordionButton);
 
+    filterCompanyEmployes(company, fetchedUsers, accordionBody);
   });
 }
