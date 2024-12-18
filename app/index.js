@@ -1,9 +1,9 @@
 import './styles/styles.scss';
-import { Tooltip, Toast, Popover } from 'bootstrap'
+import 'bootstrap';
 
 import { showUser } from './utilities/showUser';
 
-const usersWrapper = document.querySelector('.users-wrapper');
+const accordionWrapper = document.querySelector('.accordion');
 
 Promise.all([
   fetch('http://localhost:3000/users'),
@@ -21,7 +21,8 @@ Promise.all([
   .then(function (responseBodies) {
     const fetchedUsers = responseBodies[0];
     const fetchedCompanies = responseBodies[1];
-    showUser(fetchedUsers, usersWrapper, fetchedCompanies);
+
+    showUser(accordionWrapper, fetchedCompanies);
   })
   .catch(function (error) {
     console.log('Status code', error?.status);
