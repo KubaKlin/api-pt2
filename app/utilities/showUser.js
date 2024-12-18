@@ -1,4 +1,4 @@
-import { filterCompanyEmployes } from './filterCompanyEmployes';
+import { filterCompanyEmployees } from './filterCompanyEmployees';
 
 export function showUser(accordionWrapper, fetchedCompanies, fetchedUsers) {
   fetchedCompanies.forEach(function (company, index) {
@@ -32,6 +32,6 @@ export function showUser(accordionWrapper, fetchedCompanies, fetchedUsers) {
     accordion.appendChild(accordionBody);
     companyHeader.appendChild(accordionButton);
 
-    filterCompanyEmployes(company, fetchedUsers, accordionBody);
+    filterCompanyEmployees(company, fetchedUsers, accordionBody);
   });
 }
