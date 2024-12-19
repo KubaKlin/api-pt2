@@ -2,7 +2,13 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .wrapper {
   max-width: 1200px;
   width: 100%;
+}
+
+.employee-count {
+  margin-left: 25px;
+  font-size: 12px;
 }
