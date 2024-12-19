@@ -30,6 +30,12 @@ export function showUser(accordionWrapper, fetchedCompanies, fetchedUsers) {
     accordion.appendChild(accordionBody);
     companyHeader.appendChild(accordionButton);
 
-    filterCompanyEmployees(company, fetchedUsers, accordionBody, accordionButton, accordionItem);
+    filterCompanyEmployees(
+      company,
+      fetchedUsers,
+      accordionBody,
+      accordionButton,
+      accordionItem,
+    );
   });
 }

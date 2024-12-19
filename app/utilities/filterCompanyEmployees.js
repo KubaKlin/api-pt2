@@ -1,11 +1,16 @@
-export function filterCompanyEmployees(company, fetchedUsers, accordionBody, accordionButton, accordionItem) {
+export function filterCompanyEmployees(
+  company,
+  fetchedUsers,
+  accordionBody,
+  accordionButton,
+  accordionItem,
+) {
   let employeeCount = 0;
   const employeeCountIndicator = document.createElement('div');
   employeeCountIndicator.classList.add('employee-count');
   accordionButton.appendChild(employeeCountIndicator);
 
   return fetchedUsers.filter(function (employee) {
-
     if (employee.uris.company === company.uri) {
       employeeCount++;
       const employeeWrapper = document.createElement('div');
@@ -15,5 +20,4 @@ export function filterCompanyEmployees(company, fetchedUsers, accordionBody, acc
       accordionItem.setAttribute('data-employees', employeeCount);
     }
   });
-
 }

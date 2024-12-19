@@ -2,7 +2,7 @@ import './styles/styles.scss';
 import 'bootstrap';
 
 import { showUser } from './utilities/showUser';
-import {sortCompanies} from './utilities/sortCompanies';
+import { sortCompanies } from './utilities/sortCompanies';
 
 const accordionWrapper = document.querySelector('.accordion');
 
