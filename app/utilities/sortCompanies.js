@@ -1,7 +1,7 @@
 export function sortCompanies(accordionWrapper) {
   window.addEventListener('load', function () {
-    let elements = Array.from(accordionWrapper.children);
-    let sorted = elements.sort(function (firstElement, secondElement) {
+    const elements = Array.from(accordionWrapper.children);
+    const sorted = elements.sort(function (firstElement, secondElement) {
       return +firstElement.dataset.employees - +secondElement.dataset.employees;
     });
     accordionWrapper.innerHTML = '';
