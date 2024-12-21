@@ -1,10 +1,7 @@
-export function sortCompanies(accordionWrapper) {
-  const elements = Array.from(accordionWrapper.children);
-  const sorted = elements.sort(function (firstElement, secondElement) {
-    return Number(firstElement.dataset.employees) - Number(secondElement.dataset.employees);
-  });
-  accordionWrapper.innerHTML = '';
-  sorted.forEach(function (element) {
-    accordionWrapper.append(element);
-  });
+function sortByEmployeeCountDescending(firstElement, secondElement) {
+  return firstElement.employees.length > secondElement.employees.length ? -1 : 1;
+}
+
+export function sortCompanies(combinedArray) {
+  return combinedArray.sort(sortByEmployeeCountDescending);
 }

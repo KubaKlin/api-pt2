@@ -1,8 +1,6 @@
 import './styles/styles.scss';
 import 'bootstrap';
-
-import { showUser } from './utilities/showUser';
-import { sortCompanies } from './utilities/sortCompanies';
+import {processAndDisplayCompanies} from './utilities/processAndDisplayCompanies';
 
 const accordionWrapper = document.querySelector('.accordion');
 
@@ -20,8 +18,7 @@ Promise.all([
     return Promise.all([usersResponse.json(), companiesResponse.json()]);
   })
   .then(function ([fetchedUsers, fetchedCompanies]) {
-    showUser(accordionWrapper, fetchedCompanies, fetchedUsers);
-    sortCompanies(accordionWrapper);
+    processAndDisplayCompanies(fetchedUsers, fetchedCompanies, accordionWrapper);
   })
   .catch(function (error) {
     console.log('Status code', error?.status);
