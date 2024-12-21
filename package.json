@@ -8,7 +8,8 @@
     "start": "webpack-dev-server",
     "build": "npm run clean && webpack",
     "lint": "eslint ./app/index.js",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "json": " json-server db.json"
   },
   "author": "Marcin Wanago <marcin@wanago.io> (https://wanago.io)",
   "devDependencies": {
