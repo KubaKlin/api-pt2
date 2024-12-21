@@ -19,10 +19,7 @@ Promise.all([
     }
     return Promise.all([usersResponse.json(), companiesResponse.json()]);
   })
-  .then(function (responseBodies) {
-    const fetchedUsers = responseBodies[0];
-    const fetchedCompanies = responseBodies[1];
-
+  .then(function ([fetchedUsers, fetchedCompanies]) {
     showUser(accordionWrapper, fetchedCompanies, fetchedUsers);
     sortCompanies(accordionWrapper);
   })
