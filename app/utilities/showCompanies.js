@@ -1,9 +1,9 @@
-import {showCompanyEmployees} from './showCompanyUtilities/showCompanyEmployees';
-import {addAccordionItem} from './showCompanyUtilities/addAccordionItem';
-import {addCompanyHeader} from './showCompanyUtilities/addCompanyHeader';
-import {addAccordionButton} from './showCompanyUtilities/addAccordionButton';
-import {addAccordion} from './showCompanyUtilities/addAccordion';
-import {addAccordionBody} from './showCompanyUtilities/addAccordionBody';
+import { showCompanyEmployees } from './showCompanyUtilities/showCompanyEmployees';
+import { addAccordionItem } from './showCompanyUtilities/addAccordionItem';
+import { addCompanyHeader } from './showCompanyUtilities/addCompanyHeader';
+import { addAccordionButton } from './showCompanyUtilities/addAccordionButton';
+import { addAccordion } from './showCompanyUtilities/addAccordion';
+import { addAccordionBody } from './showCompanyUtilities/addAccordionBody';
 
 export function showCompanies(accordionWrapper, fetchedCompanies) {
   fetchedCompanies.forEach(function (company, index) {
