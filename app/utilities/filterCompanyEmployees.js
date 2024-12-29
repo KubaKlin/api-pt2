@@ -1,16 +1,20 @@
 export function filterCompanyEmployees(fetchedCompanies, fetchedUsers) {
-  function filterUsersByCompany(users, companyUri) {
-    return users.filter(function (user) {
-      return user.uris.company === companyUri;
-    });
-  }
-
-  const combinedArrays = fetchedCompanies.map(function (company) {
-    return {
-      ...company,
-      employees: filterUsersByCompany(fetchedUsers, company.uri),
-    };
+  const companiesDictionary = {};
+  fetchedCompanies.forEach(function(company, index) {
+    companiesDictionary[index] = Object.assign({}, company, { employees: [] });
   });
 
-  return combinedArrays;
+  const companiesByUri = {};
+  Object.keys(companiesDictionary).forEach(function(index) {
+    const company = companiesDictionary[index];
+    companiesByUri[company.uri] = company;
+  });
+
+  fetchedUsers.forEach(function(user) {
+    const companyUri = user.uris.company;
+    if (companiesByUri[companyUri]) {
+      companiesByUri[companyUri].employees.push(user);
+    }
+  });
+  return Object.values(companiesDictionary);
 }

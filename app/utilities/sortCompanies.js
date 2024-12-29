@@ -1,9 +1,11 @@
 function sortByEmployeeCountDescending(firstElement, secondElement) {
-  return firstElement.employees.length > secondElement.employees.length
-    ? -1
-    : 1;
+  if (firstElement.employees.length < secondElement.employees.length) {
+    return -1;
+  } else {
+    return 1;
+  }
 }
 
-export function sortCompanies(combinedArray) {
-  return combinedArray.sort(sortByEmployeeCountDescending);
+export function sortCompanies(companiesDictionary) {
+  return companiesDictionary.sort(sortByEmployeeCountDescending);
 }
