@@ -1,7 +1,5 @@
 function sortByEmployeeCountDescending(firstElement, secondElement) {
-  if (firstElement.employees.length < secondElement.employees.length) {
-    return -1;
-  }
+  return firstElement.employees.length - secondElement.employees.length;
 }
 
 export function sortCompanies(companiesDictionary) {
